@@ -3,7 +3,7 @@
 Yo Link Checker is a PHP script that accepts a serialized array of urls via POST, checks each link for a 404, and displays a table of working and invalid links.
 
 ## Usage Example
-```
+```html
 <?php
 $test_array = array(
                       'http://apple.com',
