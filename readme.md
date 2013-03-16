@@ -1,5 +1,6 @@
 # Yo Link Checker
-## Version .01
+### Version .01 | By [Chris Johnson](http://chrisltd.com) | https://github.com/ChrisLTD/yo_link_checker
+
 Yo Link Checker is a PHP script that accepts a serialized array of urls via POST, checks each link for a 404, and displays a table of working and invalid links.
 
 ## Usage Example
