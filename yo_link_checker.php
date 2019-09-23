@@ -1,11 +1,11 @@
 <?php
-/* 
+/*
 Yo Link Checker
 Version .01
 ===========
 Accepts a serialized array of urls via POST, checks each link for a 404, and displays a table of working and invalid links.
 ===========
-By Chris Johnson 
+By Chris Johnson
 http://chrisltd.com
 Created February 2013
 */
@@ -26,7 +26,7 @@ function generate_results_table($array){
     }
     $output .= '</td>';
     $output .= '<td>' . $count . '.</td>';
-    $output .= '<td><a href="' . $value . '">'. $value .'</a></td>';
+    $output .= '<td><a href="' . $value . '">'. $value . ' <i>(' . substr($link_headers[0], 9, 3) . ')</i></a></td>';
   }
   $output = '<table><tr><td colspan="3"><b>' . $notfound_count . '</b> out of ' . $count . ' links not found.<br><br></td></tr>' . $output . '</table>';
   return $output;
@@ -41,7 +41,7 @@ function generate_results_table($array){
     a { text-decoration: none; }
     b { color: red; }
     table { margin: 0 auto; }
-    table td { padding: 5px 3px; } 
+    table td { padding: 5px 3px; }
     table tr + tr td { border-top: 1px #eee solid; }
   </style>
 </head>
@@ -53,7 +53,7 @@ function generate_results_table($array){
 if( isset($_REQUEST["links_array"]) ){
   $form_variable = $_POST["links_array"];
   if (get_magic_quotes_gpc()) { // Check to see if Magic Quotes is on, if so, stripslashes is necessary http://stackoverflow.com/questions/2888418/unserialize-problem-in-php
-    $form_variable = stripslashes($form_variable); 
+    $form_variable = stripslashes($form_variable);
   }
   $links_array = unserialize($form_variable);
   if( $links_array[0] ){ // valid array?

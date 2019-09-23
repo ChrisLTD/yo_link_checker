@@ -1,8 +1,8 @@
 <?php
 $test_array = array(
-                      'http://apple.com',
-                      'http://nytimes.com',
-                      'http://github.com'
+                      'https://apple.com',
+                      'https://nytimes.com',
+                      'https://github.com'
                       );
 ?>
 <html>
@@ -15,7 +15,7 @@ $test_array = array(
   <textarea name="links_array" rows="5" cols="40"><?php echo htmlentities(serialize($test_array)); ?></textarea>
   <br>
   <input type="submit">
-</form>  
+</form>
 
 </body>
 </html>
